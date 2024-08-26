@@ -1,8 +1,15 @@
-/* styles.css */
-
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+}
+
+/* General container styling */
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem;
+  box-sizing: border-box;
 }
 
 /* Index Page CSS */
@@ -10,24 +17,17 @@ body {
   min-height: 100vh;
   background-image: linear-gradient(to right, #f97316, #3b82f6);
   text-align: center;
-  padding-left: 1rem;
-  padding-right: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
-
-/* .index_logo { */
-  /* margin-bottom: 2rem; */
-  /* width: 8rem;
-  height: 8rem; */
-  /* margin-left: auto;
-  margin-right: auto; */
-/* } */
 
 .index_title {
   font-size: 3rem;
   font-weight: 800;
   color: white;
   margin-bottom: 1rem;
-  margin-top: 0rem;
 }
 
 .index_subtitle {
@@ -37,8 +37,8 @@ body {
   margin-bottom: 2rem;
 }
 
-.index_buttonContainer_container{
-  margin-top: 5vw;
+.index_buttonContainer_container {
+  margin-top: 2rem;
 }
 
 .index_buttonContainer {
@@ -73,55 +73,31 @@ body {
 /* Game Container */
 .game_container {
   display: flex;
-  background-image: linear-gradient(to right, #f97316, #3b82f6);
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  min-height: 100vh;
-  padding: 1rem;
+  min-height: 90vh; /* Adjust for responsive design */
+  background: linear-gradient(to right, #f97316, #3b82f6);
+  padding: 2rem;
+  box-sizing: border-box;
 }
 
-/* Game Title */
 .game_title {
-  font-size: 2rem;
+  font-size: 2.5rem;
   font-weight: bold;
   margin-bottom: 1rem;
   color: #ffffff;
-}
-
-/* Balance Text */
-.game_balanceText {
-  font-size: 1.25rem;
-  color: #ffffff;
-  margin-bottom: 1rem;
-}
-
-/* Bet Input Container */
-.game_betInputContainer {
-  margin-bottom: 1rem;
-  width: 100%;
-  max-width: 300px;
-}
-
-.game_betInput {
-  width: 100%;
-  padding: 0.75rem;
-  border: 1px solid #d1d5db;
-  border-radius: 0.5rem;
-  font-size: 1rem;
   text-align: center;
-  outline: none;
+  line-height: 1.2;
 }
 
-/* Bet Amount Display */
-.game_betText {
-  font-size: 1.25rem;
+.game_balanceText {
+  font-size: 1.5rem;
   color: #ffffff;
   margin-bottom: 1rem;
   font-weight: bold;
 }
 
-/* Buttons Container */
 .game_buttons {
   display: flex;
   gap: 1rem;
@@ -131,7 +107,7 @@ body {
 .game_button {
   padding: 0.75rem 1.5rem;
   border-radius: 0.5rem;
-  font-size: 1rem;
+  font-size: 1.25rem;
   font-weight: bold;
   cursor: pointer;
   transition: background-color 0.2s, color 0.2s;
@@ -147,26 +123,45 @@ body {
   color: white;
 }
 
-/* Coin Flip Element */
-.game_coinContainer {
-  /* display: flex;
+.game_betInputContainer {
+  margin-bottom: 1rem;
+  width: 100%;
+  max-width: 300px;
+  display: flex;
   align-items: center;
-  justify-content: center; */
+  justify-content: center;
 }
 
-.coin {
+.game_betInput {
   width: 100%;
-  height: 100%;
-  position: relative;
-  perspective: 1000px;
-  /* display: flex; */
-  /* align-items: center;
-  justify-content: center; */
+  max-width: 300px; /* Adjusted max width to fit better */
+  padding: 0.75rem;
+  border: 1px solid #d1d5db;
+  border-radius: 0.5rem;
+  font-size: 1.25rem;
+  text-align: center;
+  outline: none;
+  box-sizing: border-box; /* Ensures padding and border are included in the width calculation */
+}
+
+
+.game_betText {
+  font-size: 1.5rem;
+  color: #ffffff;
+  margin-bottom: 1rem;
+  font-weight: bold;
+}
+
+.game_coinContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 1rem;
 }
 
 .coin img {
-  width: 100%;
-  height: 100%;
+  width: 100px;
+  height: 100px;
   border-radius: 50%;
   backface-visibility: hidden;
   transition: transform 0.5s;
@@ -176,16 +171,43 @@ body {
   transform: rotateY(180deg);
 }
 
-/* Result Container */
-.game_resultContainer {
-  margin-bottom: 1.5rem;
-  text-align: center;
+.game_flipButton {
+  padding: 10px 20px;
+  border-radius: 5px;
+  background-color: #10b981;
+  color: white;
+  font-size: 1.25rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-top: 1rem;
 }
 
-.game_result {
-  font-size: 1.5rem;
+.game_flipButton:hover {
+  background-color: #059669;
+}
+
+.game_logoutButton {
+  margin-top: 20px;
+  padding: 10px 20px;
+  border-radius: 5px;
+  background-color: #ef4444;
   color: white;
-  margin-top: 0.5
+  font-size: 1.25rem;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  border: none;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.game_logoutButton:hover {
+  background-color: #dc2626;
+  transform: scale(1.05);
+}
+
+.game_logoutButton:active {
+  background-color: #b91c1c;
+  transform: scale(0.95);
 }
 
 /* Navbar CSS */
@@ -193,10 +215,10 @@ body {
   background-image: linear-gradient(to right, #f97316, #3b82f6);
   padding: 1rem;
   height: 10vh;
-  border-bottom: 2px solid #d1d5db;
   display: flex;
   align-items: center;
   justify-content: center;
+  border-bottom: 2px solid #d1d5db;
 }
 
 .navbar_inner {
@@ -213,10 +235,12 @@ body {
   font-size: 1.5rem;
   font-weight: bold;
 }
-.navbar_logoImage{
-  width:1px;
-}
 
+.navbar_logoImage {
+  width: 50px;
+  height: 50px;
+  margin-left: 10px;
+}
 
 /* Layout CSS */
 .layout_container {
@@ -247,28 +271,4 @@ body {
   font-size: 1rem;
   font-weight: bold;
   color: white;
-}
-
-/* Coin Flip Animation */
-.coin {
-  /* width: 100px;
-  height: 100px; */
-  position: relative;
-  margin: 20px auto;
-  perspective: 1000px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.coin img {
-  width: 50%;
-  height: 50%;
-  border-radius: 50%;
-  backface-visibility: hidden;
-  transition: transform 0.5s;
-}
-
-.flipping img {
-  transform: rotateY(180deg);
 }
