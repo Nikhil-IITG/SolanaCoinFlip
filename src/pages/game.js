@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Connection, PublicKey, SystemProgram, Transaction } from '@solana/web3.js';
 import { useWallet, useConnection } from '@solana/wallet-adapter-react';
 import { useRouter } from 'next/router';
-import Navbar from '../components/Navbar';
+import Navbar from '../components/navbar';
 
 const programId = new PublicKey(process.env.NEXT_PUBLIC_PROGRAM_ID);
 

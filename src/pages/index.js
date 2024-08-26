@@ -1,7 +1,7 @@
 import { useWallet } from '@solana/wallet-adapter-react';
 import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
-import Navbar from '@/components/Navbar';
+import Navbar from '../components/navbar';
 
 export default function Home() {
   const { connect, disconnect, connected, select, wallets, wallet } = useWallet();
